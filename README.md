@@ -18,6 +18,7 @@ in-memory key–value database, cache and message broker
     -   the data has been altered (PUT, POST, DELETE) since the cache was last accessed or 'hit'
     -   the time to live expired (60 mins)
 - take note of response time between cache misses and cache hits
+- take note of logger - logging calls to DB
 - run multiple instances of application simultaneously and send requests to see cache in action across the board
 
 # TODO
