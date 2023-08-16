@@ -1,7 +1,11 @@
 # v2-redis-springboot-api
 Caching with Redis and Spring Boot
 
-# steps
+# Redis
+Redis stands for Remote Dictionary Server. It is used as a distributed, 
+in-memory key–value database, cache and message broker
+
+# Steps
 - install Redis, Windows currently unsupported, can either use Windows Subsystem for Linux, or this Windows adaption https://github.com/tporadowski/redis/releases
 - run 'redis-server' to start server on default port: 6379
 - open new terminal, run 'redis-cli'
