@@ -30,7 +30,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    @Cacheable(value = "people")
+    @Cacheable(value = "people", key = "#id")
     public Person getById(Long id) {
         logger.info("In getById(" + id + ")");
         return personRepository.findById(id).orElseThrow();
@@ -44,7 +44,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    @CacheEvict(value = "people", allEntries = true)
+    @CacheEvict(value = "people", key = "#id", allEntries = true)
     public Person updatePerson(Long id, Person person) {
         var foundPerson = personRepository.findById(id).orElseThrow();
         logger.info("Updated " + foundPerson.getName());
@@ -56,7 +56,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    @CacheEvict(value = "people", allEntries = true)
+    @CacheEvict(value = "people", key = "#id", allEntries = true)
     public Person deletePerson(Long id) {
         var person = personRepository.findById(id).orElseThrow();
         personRepository.deleteById(id);
