@@ -20,3 +20,5 @@ in-memory key–value database, cache and message broker
 - take note of response time between cache misses and cache hits
 - run multiple instances of application simultaneously and send requests to see cache in action across the board
 
+# TODO
+- implement failsafe, ensure application bypasses cache if server is down etc. and hits DB, set max time to try hitting cache, or if response is null, bypass
