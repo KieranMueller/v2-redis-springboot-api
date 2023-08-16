@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "280cc3c0-47af-4b5a-839e-79e6a06b76a5",
+		"name": "Cache",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26504106"
+	},
+	"item": [
+		{
+			"name": "GET all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/people"
+			},
+			"response": []
+		},
+		{
+			"name": "GET by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/people/3"
+			},
+			"response": []
+		},
+		{
+			"name": "POST person",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"jasper\",\r\n    \"password\": \"fruitloops\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/people"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT update person",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"gru\",\r\n    \"password\": \"potato\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/people/3"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/people/5"
+			},
+			"response": []
+		}
+	]
+}
