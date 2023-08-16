@@ -20,7 +20,7 @@ public class PersonController {
     }
 
     @GetMapping("{id}")
-    public Person getById(@PathVariable Long id) {
+    public Person getById(@PathVariable Long id) throws InterruptedException {
         return personService.getById(id);
     }
 

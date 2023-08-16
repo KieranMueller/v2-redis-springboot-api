@@ -24,14 +24,15 @@ public class PersonServiceImpl implements PersonService {
     @Override
     @Cacheable(value = "people")
     public List<Person> getAll() throws InterruptedException {
-        sleep(3000);
+        sleep(2000);
         logger.info("In getAll()");
         return personRepository.findAll();
     }
 
     @Override
     @Cacheable(value = "people", key = "#id")
-    public Person getById(Long id) {
+    public Person getById(Long id) throws InterruptedException {
+        sleep(2000);
         logger.info("In getById(" + id + ")");
         return personRepository.findById(id).orElseThrow();
     }

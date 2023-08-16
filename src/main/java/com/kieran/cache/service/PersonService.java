@@ -8,7 +8,7 @@ public interface PersonService {
 
     List<Person> getAll() throws InterruptedException;
 
-    Person getById(Long id);
+    Person getById(Long id) throws InterruptedException;
 
     Person addPerson(Person person);
 
