@@ -1,7 +1,11 @@
 # v2-redis-springboot-api
 Caching with Redis and Spring Boot
 
-# steps
+# Redis
+Redis stands for Remote Dictionary Server. It is used as a distributed, 
+in-memory key–value database, cache and message broker
+
+# Steps
 - install Redis, Windows currently unsupported, can either use Windows Subsystem for Linux, or this Windows adaption https://github.com/tporadowski/redis/releases
 - run 'redis-server' to start server on default port: 6379
 - open new terminal, run 'redis-cli'
@@ -16,3 +20,5 @@ Caching with Redis and Spring Boot
 - take note of response time between cache misses and cache hits
 - run multiple instances of application simultaneously and send requests to see cache in action across the board
 
+# TODO
+- implement failsafe, ensure application bypasses cache if server is down etc. and hits DB, set max time to try hitting cache, or if response is null, bypass
