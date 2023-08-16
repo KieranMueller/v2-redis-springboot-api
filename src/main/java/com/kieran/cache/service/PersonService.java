@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PersonService {
 
-    List<Person> getAll();
+    List<Person> getAll() throws InterruptedException;
 
     Person getById(Long id);
 

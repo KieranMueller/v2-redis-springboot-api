@@ -4,6 +4,7 @@ import com.kieran.cache.entity.Person;
 import com.kieran.cache.repository.PersonRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class Seeder implements CommandLineRunner {
     private final PersonRepository personRepository;
 
     @Override
+    @CacheEvict(value = "people", allEntries = true)
     public void run(String... args) throws Exception {
         var person1 = new Person(null, "kieran", "test");
         var person2 = new Person(null, "luke", "pass");
