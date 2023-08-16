@@ -3,6 +3,7 @@ package com.kieran.cache.controller;
 import com.kieran.cache.entity.Person;
 import com.kieran.cache.service.PersonService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.EnableCaching;
@@ -15,20 +16,21 @@ import static java.lang.Thread.sleep;
 @RestController
 @RequiredArgsConstructor
 @EnableCaching
+@CacheConfig(cacheNames={"people"})
 @RequestMapping("people")
 public class PersonController {
 
     private final PersonService personService;
 
     @GetMapping
-    @Cacheable("people")
+    @Cacheable
     public List<Person> getAll() throws InterruptedException {
         sleep(3000);
         return personService.getAll();
     }
 
     @GetMapping("{id}")
-    @Cacheable("people")
+    @Cacheable
     public Person getById(@PathVariable Long id) {
         return personService.getById(id);
     }
